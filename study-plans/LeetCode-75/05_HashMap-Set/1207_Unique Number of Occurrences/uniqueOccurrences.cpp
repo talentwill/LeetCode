@@ -1,13 +1,17 @@
+#include <map>
+#include <set>
+#include <vector>
+using namespace std;
+
 class Solution {
 public:
-    bool uniqueOccurrences(vector<int>& arr)
-    {
+    bool uniqueOccurrences(vector<int>& arr) {
         map<int, int> freq;
-        for (int x : arr) {
+        for (int x: arr) {
             freq[x]++;
         }
         set<int> counts;
-        for (auto [k, v] : freq) {
+        for (auto [k, v]: freq) {
             if (counts.count(v) > 0) {
                 return false;
             }
